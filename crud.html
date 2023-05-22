@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestione Utenze</title>
+</head>
+<body>
+    <h1>Gestore Utenti</h1>
+    
+    <div>
+        <h2>Aggiungi Utente</h2>
+        <input type="text" id="name" placeholder="Nome">
+        <input type="text" id="surname" placeholder="Cognome">
+        <input type="text" id="email" placeholder="Email">
+        <button onclick="addUser()">Aggiungi</button>
+    </div>
+    
+    <div>
+        <h2>Rimuovi Utente</h2>
+        <input type="text" id="removeEmail" placeholder="Email">
+        <input type="text" id="removeName" placeholder="Nome">
+        <input type="text" id="removeSurname" placeholder="Cognome">
+        <button onclick="removeUser()">Rimuovi</button>
+    </div>
+    
+    <div>
+        <h2>Modifica Utente</h2>
+        <input type="text" id="editEmail" placeholder="Email">
+        <input type="text" id="newName" placeholder="Nuovo Nome">
+        <input type="text" id="newSurname" placeholder="Nuovo Cognome">
+        <input type="text" id="newEmail" placeholder="Nuova Email">
+        <button onclick="editUser()">Modifica</button>
+    </div>
+    
+    <div>
+        <h2>Cerca Utente</h2>
+        <input type="text" id="searchEmail" placeholder="Email">
+        <button onclick="searchUser()">Cerca</button>
+    </div>
+    
+    <div>
+        <h2>Tabella Utenti</h2>
+        <table id="userTable">
+            <tr>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Email</th>
+            </tr>
+        </table>
+    </div>
+    
+    <script src="scriptcrud.js"></script>
+</body>
+</html>
+
