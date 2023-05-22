@@ -1,6 +1,8 @@
 let users = [];
 
-const addUser = () => {
+const addUser = (event) => {
+    event.preventDefault();
+
     const name = document.getElementById("name").value;
     const surname = document.getElementById("surname").value;
     const email = document.getElementById("email").value;
@@ -12,6 +14,13 @@ const addUser = () => {
 
     if (!checkEmail(email)) {
         alert("Please enter a valid email address.");
+        return;
+    }
+
+    //Controlla se l'utente esiste già
+    let userIndex = searchIndexUser(email);
+    if (userIndex !== -1) {
+        alert("User already exists.");
         return;
     }
 
@@ -65,6 +74,7 @@ const removeUser = () => {
         alert("User not found.");
         return;
     }
+
     users.splice(userIndex, 1);
     updateTableUser();
 
@@ -74,15 +84,20 @@ const removeUser = () => {
 }
 
 const editUser = () => {
-    let email = document.getElementById("editEmail").value;
-    let newName = document.getElementById("newName").value;
-    let newSurname = document.getElementById("newSurname").value;
-    let newEmail = document.getElementById("newEmail").value;
+    const email = document.getElementById("editEmail").value;
+    const newName = document.getElementById("newName").value;
+    const newSurname = document.getElementById("newSurname").value;
+    const newEmail = document.getElementById("newEmail").value;
 
     let userIndex = searchIndexUser(email);
 
     if (userIndex === -1) {
         alert("User not found.");
+        return;
+    }
+
+    if (!checkEmail(newEmail)) {
+        alert("Please enter a valid email address.");
         return;
     }
 
@@ -104,14 +119,14 @@ const searchUser = () => {
     let userIndex = searchIndexUser(email);
 
     if (userIndex === -1) {
-        displayMessage("Utente non trovato.");
+        alert("Utente non trovato.");
         return;
     }
 
     let user = users[userIndex];
 
-    let message = `Utente trovato! \n Nome: ${user.name} Cognome: ${user.surname} Email: ${user.email}`;
-    displayMessage(message);
+    let message = `Utente trovato! \nNome: ${user.name} Cognome: ${user.surname} Email: ${user.email}`;
+    alert(message);
 
     document.getElementById("searchEmail").value = "";
 }
