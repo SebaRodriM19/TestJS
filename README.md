@@ -1,7 +1,7 @@
 # TestJS
 
 * Aggiungere un utente e controllare che rispettino i requisiti:
-Tramite un input di testo viene creato un utente che salvato in un array e successuvamente aggiunto alla tabella.
+Tramite un input di testo viene creato un utente che viene salvato in un array e successuvamente aggiunto alla tabella.
 Viene fatta una verifica sulla correttezza della mail.
 (genra un bug dopo l'aggiunta dello stile. Il primo utente viene mostrato due volte).
 
