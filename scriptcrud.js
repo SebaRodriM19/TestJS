@@ -17,7 +17,7 @@ const addUser = (event) => {
         return;
     }
 
-    //Controlla se l'utente esiste già
+    //Check if users already exists
     let userIndex = searchIndexUser(email);
     if (userIndex !== -1) {
         alert("User already exists.");
@@ -37,31 +37,6 @@ const addUser = (event) => {
     document.getElementById("name").value = "";
     document.getElementById("surname").value = "";
     document.getElementById("email").value = "";
-}
-
-const checkEmail = (email) => {
-    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return pattern.test(email);
-}
-
-const updateTableUser = () => {
-    let tableUser = document.getElementById("userTable");
-
-    while (tableUser.rows.length > 1) {
-        tableUser.deleteRow(1);
-    }
-
-    for (let i = 0; i < users.length; i++) {
-        let user = users[i];
-
-        let row = tableUser.insertRow();
-        let cellName = row.insertCell();
-        cellName.textContent = user.name;
-        let cellSurname = row.insertCell();
-        cellSurname.textContent = user.surname;
-        let cellEmail = row.insertCell();
-        cellEmail.textContent = user.email;
-    }
 }
 
 const removeUser = () => {
@@ -140,6 +115,31 @@ const searchIndexUser = (email) => {
     //User not found
     return -1;
 };
+
+const checkEmail = (email) => {
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return pattern.test(email);
+}
+
+const updateTableUser = () => {
+    let tableUser = document.getElementById("userTable");
+
+    while (tableUser.rows.length > 1) {
+        tableUser.deleteRow(1);
+    }
+
+    for (let i = 0; i < users.length; i++) {
+        let user = users[i];
+
+        let row = tableUser.insertRow();
+        let cellName = row.insertCell();
+        cellName.textContent = user.name;
+        let cellSurname = row.insertCell();
+        cellSurname.textContent = user.surname;
+        let cellEmail = row.insertCell();
+        cellEmail.textContent = user.email;
+    }
+}
 
 const displayMessage = (message) => {
     let messageParagraph = document.createElement("p");
