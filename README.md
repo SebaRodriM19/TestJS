@@ -3,7 +3,7 @@
 * Aggiungere un utente e controllare che rispettino i requisiti:
 Tramite un input di testo viene creato un utente che viene salvato in un array e successuvamente aggiunto alla tabella.
 Viene fatta una verifica sulla correttezza della mail. Viene verificato se l'utenete esiste già.
-(genera un bug dopo l'aggiunta dello stile. Il primo utente viene mostrato due volte).
+(genera un bug dopo l'aggiunta dello stile. L'aggiunta del primo utente viene mostrato due volte).
 
 * Eliminare un utente:
 Tramite input di testo vengono inseriti i dati dell'utenete. L'utente se esiste, verrà rimosso dall'array e dalla tabella, altrimenti viene segnalato con un alert che l'utenete non esiste.
